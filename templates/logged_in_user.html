@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>CAR WASH</title>
+    <link
+      rel="stylesheet"
+      href="../static/fonts/material-icon/css/material-design-iconic-font.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- Main css -->
+    <!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">-->
+    <link rel="stylesheet" href="../static/css/logged_in_user.css" />
+    <!--    <link rel="stylesheet" href="../static/css/styles.css?<?=filemtime('styles.css');?>"  />-->
+    <style>
+      .logo {
+        height: 150px;
+        width: auto;
+        float: left;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body style="background-color: black">
+    >
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top sai"
+      id="mainNav"
+    >
+      <div class="container px-4 px-lg-5">
+        
+          <img
+            src="..\static\assets\img\logo.png"
+            alt="Sakura logo"
+            class="logo"
+        />
+        <!-- <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        > -->
+          
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class ="nav-link" href="/user_booking">View Bookings</a>
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main">
+      <!-- Sign up form -->
+
+        <div class="row">
+          <div class="col-8">
+            <img src="../static/assets/img/car.jpg" id="img-car" />
+          </div>
+          <div class="col-4">
+            <div class="register-form">
+              <h2>Select a Service</h2>
+              <form method="POST" class="service-form" id="service-form">
+                <div class="form-group">
+                  <label for="email"
+                    ><i class="zmdi zmdi-account material-icons-name"></i
+                  ></label>
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    placeholder="Enter Email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="service">Select a service:</label>
+                  <select id="service" name="service">
+                    <option value="select-service">SELECT A SERVICE</option>
+                    {% for dict_item in rows_service %}
+                    <option value={{dict_item}}>{{dict_item}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="location">Select a location:</label>
+                  <select id="location" name="location">
+                    <option value="select-loc">SELECT YOUR LOCATION</option>
+                    {% for dict_item in rows_loc %}
+                    <option value={{dict_item}}>{{dict_item}}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="date">Choose a date:</label>
+                  <input type="date" id="date" name="date" />
+                </div>
+
+                <div class="form-group form-button">
+                  <input
+                    type="submit"
+                    name="get-service"
+                    id="get-service"
+                    class="form-submit"
+                    value="Book service"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <!-- This templates was made by Codent -->
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Signup</title>
+    <link
+      rel="stylesheet"
+      href="../static/fonts/material-icon/css/material-design-iconic-font.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- Main css -->
+    <!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">-->
+    <link rel="stylesheet" href="../static/css/styles_signup.css" />
+    <!--    <link rel="stylesheet" href="../static/css/styles.css?<?=filemtime('styles.css');?>"  />-->
+    <style>
+      .logo {
+        height: 150px;
+        width: auto;
+        float: left;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body style="background-color: black">
+    >
+    <nav
+      class="navbar navbar-expand-lg navbar-light fixed-top sai"
+      id="mainNav"
+    >
+      <div class="container px-4 px-lg-5">
+        <a href="/"
+          ><img
+            src="..\static\assets\img\logo.png"
+            alt="Sakura logo"
+            class="logo"
+        /></a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="/">User Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin_login">Admin Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="main">
+      <!-- Sign up form -->
+      <section class="signup">
+        <div class="container1">
+          <div class="signup-content">
+            <div class="signup-form">
+              <p class="error"><strong>{{ message }}</strong></p>
+              <h2 class="form-title">Sign up</h2>
+              <form method="POST" class="register-form" id="register-form">
+                <div class="form-group">
+                  <label for="name"
+                    ><i class="zmdi zmdi-account material-icons-name"></i
+                  ></label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email"><i class="zmdi zmdi-email"></i></label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Your Email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                  <input
+                    type="password"
+                    name="pass"
+                    id="pass"
+                    placeholder="Password"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="re_pass"
+                    ><i class="zmdi zmdi-lock-outline"></i
+                  ></label>
+                  <input
+                    type="password"
+                    name="re_pass"
+                    id="re_pass"
+                    placeholder="Repeat your password"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="checkbox"
+                    name="agree-term"
+                    id="agree-term"
+                    class="agree-term"
+                  />
+                  <label for="agree-term" class="label-agree-term"
+                    ><span><span></span></span>I agree all statements in
+                    <a href="#" class="term-service">Terms of service</a></label
+                  >
+                </div>
+                <div class="form-group form-button">
+                  <input
+                    type="submit"
+                    name="signup"
+                    id="signup"
+                    class="form-submit"
+                    value="Register"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="signup-image">
+              <figure>
+                <img
+                  src="..\static\assets\img\logo.png"
+                  alt="sign up image"
+                />
+              </figure>
+
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- JS -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <!-- This templates was made by Codent -->
+  </body>
+</html>
